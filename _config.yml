@@ -18,18 +18,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: James Shen's Personal Website
-email: jierans@sas.upenn.edu
+title: James Shen
+email: jierans[at]sas.upenn.edu
 description: >- # this meaJamesJieranShenignore newlines until "baseurl:"
   Physics PhD Student at the University of Pennsylvania.
 baseurl: "" # the subpath of your site, e.g. /blog
-domain: my-site.github.io
+domain: jamesjieranshen.github.io
 url: "https://jamesjieranshen.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  JamesJieranShen
 
 # Build settings
-theme: minima
+theme: slate
 plugins:
   - jekyll-feed
 
