@@ -29,7 +29,7 @@ twitter_username: jekyllrb
 github_username:  JamesJieranShen
 
 # Build settings
-theme: slate
+theme: minima
 plugins:
   - jekyll-feed
 
