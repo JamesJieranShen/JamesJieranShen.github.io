@@ -54,3 +54,5 @@ plugins:
 #   - vendor/ruby/
 
 theme: minima
+minima:
+  skin: dark

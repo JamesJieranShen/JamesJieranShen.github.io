@@ -15,7 +15,7 @@ gem "webrick"
 # If you have any plugins, put them here!
 
 gem "github-pages", "~> 226", group: :jekyll_plugins
-
+gem "minima", git: "https://github.com/jekyll/minima"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
