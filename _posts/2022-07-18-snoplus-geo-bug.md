@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A bug in SNO+ Geometry"
+title:  "Two bugs in SNO+ Geometry"
 date:   2022-07-18 00:00:00 -0400
 categories: chroma, sno+, geant4
 ---
@@ -92,3 +92,11 @@ The issue was also previously seen in ATLAS geometry, reported here:
 Bug report was patched in Geant4 10.4.p02
 <https://gitlab.cern.ch/geant4/geant4/-/blob/master/source/geometry/solids/Boolean/src/G4DisplacedSolid.cc#L30>,
 however, we are stuck on ancient 10.0.p04.
+
+
+
+## Another Bug
+
+Belly groove objects are not continuous because of an offset issue: <https://github.com/snoplus/rat/blob/ba923dbacc8fd51475d47cbaeb61af31a540c868/src/geo/solids/BellyGroove.cc#L83>
+
+![Belly Groove](/assets/snoplus_geo_bug/belly_groove.png)
