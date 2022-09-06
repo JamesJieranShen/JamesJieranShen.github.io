@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "PMT Physics check for chroma and RAT"
+date:   2022-09-05 00:00:00 -0400
+categories: chroma
+---
+
+## Photon propagation within the photocathode material
+Phil Jones' Thin Film approximation
+model:<https://ora.ox.ac.uk/catalog/uuid:e99b0c4a-2cce-4e0a-9ce1-e0b8de12b264/download_file?file_format=application%2Fpdf&safe_filename=Jones_thesis>
+Appendix B 
+
+- RAT does the calculation twice. $n_3$ is set to 1 when entering PC, while $n_1$ is set to 1 when leaving the PC. This
+  seemingly circumvents the material thickness calculation, as the photon propagation inside the PE is actually
+  simulated.
+- Chroma sets the thickness to be uniform along the surface, which is not true for the real tubes. Also, thickness needs
+  to be given in nm. Using the value 28nm from the rat db comment.
+- Updated the dynode surface.
+- mirror surface utilizes the complex model as well. This has been added as a new material called `mirror_sno`. This
+  material should be almost completely reflective. Thin film approximation is not proper here. RAT uses fresnel
+  equations, but these are not implemented in chroma. Workaround for now is to use a very large thicknessvalue to
+  approximate Fresnel transmission.
+
+- Concentrator has a set reflectivity, of which a certain portion (40 percent) diffusively reflects, while the other
+  specularly reflects.
+- Reflectivity of the concentrator is frequency and angle dependent in RAT. In Chroma it is a single number. Optimizing
+  shows this number should be 0.73. Error is minimized to be less than 4%
